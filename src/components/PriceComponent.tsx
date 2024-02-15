@@ -10,7 +10,7 @@ const PriceComponent = () => {
     return null;
   }
 
-  const { price } = context;
+  const { price, checked } = context;
 
   return (
     <Box sx={boxStyles.two}>
@@ -21,7 +21,7 @@ const PriceComponent = () => {
         textAlign={"center"}
         fontSize={"1.85rem"}
       >
-        ${price}.00
+        ${checked ? price * 0.75 : price}.00
       </Typography>
       <Typography
         variant="body1"

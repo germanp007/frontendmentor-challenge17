@@ -33,14 +33,8 @@ export const MyContextProvider: FC<MyContextProviderProps> = ({ children }) => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
-    handleDiscount(event.target.checked);
   };
 
-  const handleDiscount = (isChecked: boolean) => {
-    const newPrice = price * 0.75;
-
-    return isChecked ? newPrice : price;
-  };
   const handleViews = (price: number) => {
     if (price <= 8) {
       return `10K`;

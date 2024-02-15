@@ -11,7 +11,10 @@ const BenefitsComponent: FC<Props> = ({ title }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: {
+          xs: "center",
+          sm: "left",
+        },
         gap: 1,
       }}
     >

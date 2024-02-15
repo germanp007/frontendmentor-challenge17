@@ -11,7 +11,7 @@ const SliderComponent = () => {
   }
   const { price, setPrice } = context;
 
-  const priceOptions = [8, 12, 16, 20, 24, 28, 32, 36];
+  const priceOptions = [8, 12, 16, 24, 36];
 
   const handleSliderChange = (_event: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
@@ -34,7 +34,7 @@ const SliderComponent = () => {
       <Slider
         min={8}
         max={36}
-        step={4}
+        step={5}
         sx={sliderStyle}
         value={price}
         onChange={handleSliderChange}

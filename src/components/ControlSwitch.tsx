@@ -1,6 +1,5 @@
 import Switch from "@mui/material/Switch";
 import { switchStyle } from "../Theme/constants";
-import { theme } from "../Theme/theme";
 import { myContext } from "../context/Context";
 import { useContext } from "react";
 export default function ControlSwitch() {
@@ -17,8 +16,8 @@ export default function ControlSwitch() {
         "& .MuiSwitch-track": {
           ...switchStyle["& .MuiSwitch-track"],
           backgroundColor: checked
-            ? theme.palette.secondary.sliderBackground
-            : theme.palette.secondary.toggleBackground,
+            ? "hsl(174, 86%, 45%)"
+            : "hsl(223, 50%, 87%)",
         },
       }}
       checked={checked}
