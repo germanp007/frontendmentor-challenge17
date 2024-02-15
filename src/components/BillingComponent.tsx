@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Hidden, Typography } from "@mui/material";
 import { boxStyles } from "../Theme/constants";
 import ControlSwitch from "./ControlSwitch";
 
@@ -29,11 +29,16 @@ const BillingComponent = () => {
         textAlign={"center"}
         sx={{
           background: "hsl(14, 92%, 95%)",
-          width: 45,
+          minWidth: 45,
+          padding: "0 5px",
           borderRadius: 50,
         }}
       >
-        - 25%
+        <Hidden smDown>-25% discount</Hidden>
+
+        <Hidden smUp implementation="css">
+          -25%
+        </Hidden>
       </Typography>
     </Box>
   );
