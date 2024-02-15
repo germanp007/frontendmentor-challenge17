@@ -1,4 +1,10 @@
-import { createTheme, PaletteOptions } from "@mui/material";
+import {
+  createTheme,
+  PaletteColor,
+  PaletteOptions,
+  Theme,
+  ThemeOptions,
+} from "@mui/material";
 
 interface MyPaletteOptions extends PaletteOptions {
   mainBackground: string;
@@ -14,7 +20,29 @@ interface MyPaletteOptions extends PaletteOptions {
   discountBackground: string;
 }
 
-export const theme = createTheme({
+interface MyPaletteColor extends PaletteColor {
+  mainBackground: string;
+  lightText: string;
+  darkText: string;
+  contrastText: string;
+  discountText: string;
+  priceBackground: string;
+  emptySlider: string;
+  toggleBackground: string;
+  sliderBackground: string;
+  sliderBar: string;
+  discountBackground: string;
+}
+// Extend the existing PaletteOptions interface
+interface MyThemeOptions extends ThemeOptions {
+  palette?: MyPaletteOptions;
+}
+
+// Extend the existing Theme interface
+interface MyTheme extends Theme {
+  palette: MyPaletteOptions;
+}
+export const theme: MyTheme = createTheme({
   palette: {
     primary: {
       main: "#44124",

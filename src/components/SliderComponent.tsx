@@ -4,11 +4,16 @@ import { useContext } from "react";
 import { sliderStyle } from "../Theme/constants";
 
 const SliderComponent = () => {
-  const { price, setPrice } = useContext(myContext);
+  const context = useContext(myContext);
 
-  const priceOptions = [8, 12, 16, 24, 36];
+  if (!context) {
+    return null;
+  }
+  const { price, setPrice } = context;
 
-  const handleSliderChange = (event: Event, newValue: number | number[]) => {
+  const priceOptions = [8, 12, 16, 20, 24, 28, 32, 36];
+
+  const handleSliderChange = (_event: Event, newValue: number | number[]) => {
     if (typeof newValue === "number") {
       const closestValue = priceOptions.reduce((prev, curr) =>
         Math.abs(curr - newValue) < Math.abs(prev - newValue) ? curr : prev
